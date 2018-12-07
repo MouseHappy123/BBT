@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>留言板</title>
+	<link rel="stylesheet" type="text/css" href="liuyanban.css">
+</head>
+
+<body>
+	<div id="Layer1" style="position:fixed; left:0px; top:0px; width:100%; height:100%">
+		<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1543304259605&di=22ace36240af38868342e8c5bef81ed4&imgtype=0&src=http%3A%2F%2Fimgs.aixifan.com%2Fo_1c8uc9u9l1n56ap1vk5m69vji2v.jpg"
+		 width="100%" height="100%" />
+		<div id="form_login_div">
+			<div class="form_login">
+				<label class="login_title"><span>登陆账号</span></label><br /><br />
+				<input id="user1" type="user1" placeholder="请输入用户名" style="width: 240px;height: 24px;" /><br />
+				<input id="password" type="password" name="password" placeholder="请输入密码" style="width: 240px;height: 24px;" /><br />
+				<input type='submit' class="btn-block" id="login" value="登陆" style="width:100px;height: 26px;" /><br />
+				<input type='submit' class="btn-block" id="tuichu" value="退出登录" style="width:100px;height: 26px;" /><br />
+				<input type='button' onclick="TurnToLogin()" value='登陆' />&nbsp;&nbsp;&nbsp;
+				<input type='button' onclick="TurnToRegister()" value='注册' /><br />
+				<div id="result-msg"></div>
+				<div id="comments1"></div>
+				<a href="http://localhost/liuyanban/liuyanban.html">
+					<h2>(￣３￣)a 去留言吧</h2>
+				</a>
+			</div>
+		</div>
+
+		<div id="form_register_div">
+			<div class="form_register">
+				<label class="register_title"><span>注册账号</span></label><br /><br />
+				<input id="user2" type="user2" placeholder="请输入用户名" style="width: 240px;height: 24px;" /><br />
+				<input id="password1" type="password1" name="password1" placeholder="请输入密码" style="width: 240px;height: 24px;" /><br />
+				<input id="password2" type="password2" name="checkpwd" placeholder="请确认密码" style="width: 240px;height: 24px;" /><br />
+				<input type='submit' class="btn-block" id="regist" value="注册" style="width:100px;height: 26px;" /><br />
+				<input type='button' onclick="TurnToLogin()" value='登陆' />&nbsp;&nbsp;&nbsp;
+				<input type='button' onclick="TurnToRegister()" value='注册' /><br />
+				<div id="result-msg1"></div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="liuyanban.js"></script>
+</body>
+
+</html>

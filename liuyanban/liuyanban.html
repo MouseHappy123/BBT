@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>留言板</title>
+    <link rel="stylesheet" type="text/css" href="liuyanban.css">
+    <style type="text/css">
+        div.kuang {
+            border-style: solid;
+            margin: 0 auto;
+            width: 50%;
+            display: inline-block !important;
+            display: inline;
+            background-image: linear-gradient(#fff, #E0ffff 100px);
+        }
+
+        .main {
+            color: #666;
+            margin-top: 50px;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+        @-webkit-keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @-moz-keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @-ms-keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @-o-keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+        .blink {
+            color: #00ffff;
+            animation: blink 1s linear infinite;
+            /* 其它浏览器兼容性前缀 */
+            -webkit-animation: blink 2s linear infinite;
+            -moz-animation: blink 2s linear infinite;
+            -ms-animation: blink 2s linear infinite;
+            -o-animation: blink 2s linear infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="http://localhost/liuyanban/index.html">
+        <button>
+            <h2>这里返回啊(｀・ω・´)</h2>
+        </button>
+    </a>
+    <div id="abc">
+        <div id="post">
+            <h1 class="blink">留言板</h1>
+            <p>留言内容：</p>
+            <p><textarea class="input" id="txt" style="width:50%; height:80px"></textarea></p>
+            <p><input type="submit" class='btn' value="发表" id="add" /></p>
+            <div id="message"></div>
+            <div id="result-msg2"></div>
+        </div>
+        <div id="comments"></div>
+    </div>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="liuyanban.js"></script>
+</body>
+
+</html>
