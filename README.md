@@ -1,8 +1,32 @@
-### 本菜鸡的留言板项目简介
+### 留言板项目简介
 
 #### HTML代码
 
 ##### 登陆注册界面
+
+##### 登录和注册界面在同一页面下，采用以下代码实现
+
+```javascript
+var TurnToLogin = () => {
+    document.getElementById('form_login_div').style.display = "block";
+    document.getElementById('form_register_div').style.display = "none";
+}
+var TurnToRegister = () => {
+    document.getElementById('form_register_div').style.display = "block";
+    document.getElementById('form_login_div').style.display = "none";
+```
+
+##### 让背景自适应屏幕大小
+
+```html
+ <div id="Layer1" style="position:fixed; left:0px; top:0px; width:100%; height:100%">
+
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1543304259605&di=22ace36240af38868342e8c5bef81ed4&imgtype=0&src=http%3A%2F%2Fimgs.aixifan.com%2Fo_1c8uc9u9l1n56ap1vk5m69vji2v.jpg"
+
+         width="100%" height="100%" />
+```
+
+##### 以下为全部代码
 
 ```html
 <!DOCTYPE html>
@@ -91,9 +115,7 @@
 </html>
 ```
 
-```
 
-```
 
 ##### 留言板界面
 
@@ -470,9 +492,7 @@ $(function () {
 });
 ```
 
-```
 
-```
 
 ### 图片
 
@@ -482,7 +502,7 @@ Images：
 
 > 图为登陆注册界面背景（一拳超人s级英雄大合照）
 
-![](D:\XAMPP\htdocs\liuyanban\53c388616b576.gif)
+![](https://raw.githubusercontent.com/MouseHappy123/BBT/master/liuyanban/53c388616b576.gif)
 
 > 图为留言板界面背景
 
