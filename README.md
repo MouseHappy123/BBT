@@ -1,10 +1,16 @@
 ### 留言板项目简介
 
+
+
 #### HTML代码
+
+
 
 ##### 登陆注册界面
 
-##### 登录和注册界面在同一页面下，采用以下代码实现
+
+
+##### 登录和注册界面在同一页面下，采用以下代码实现相互切换
 
 ```javascript
 var TurnToLogin = () => {
@@ -16,6 +22,8 @@ var TurnToRegister = () => {
     document.getElementById('form_login_div').style.display = "none";
 ```
 
+
+
 ##### 让背景自适应屏幕大小
 
 ```html
@@ -25,6 +33,8 @@ var TurnToRegister = () => {
 
          width="100%" height="100%" />
 ```
+
+
 
 ##### 以下为全部代码
 
@@ -226,13 +236,55 @@ var TurnToRegister = () => {
 </html>
 ```
 
-```
 
-```
+
+
+
+------
+
+
 
 
 
 ### js
+
+
+
+#### 传输数据部分使用ajax
+
+```javascript
+$.ajax({
+
+        type: "POST",
+
+        url: "xxx.php",
+
+        data: {xx,xx,... },
+
+        dataType: 'JSON',
+
+        success: function (res) {........}  });
+```
+
+
+
+#### 返回留言部分通过拼接html代码实现功能
+
+```javascript
+var text = "<div class=\"kuang\">" + "<div class=\"left\">ID:" + array["id"] + "</div><div class=\"center\">用户名:" + array["user"] + "</div><div class=\"right\">时间: " + array["addtime"] +
+
+                "</div><br/><div class=\"left\">留言:" + array["comment"] + "</div><div class=\"right\">操作:" + "<button class=\"btn-a\" "
+
+                \+ "data-id=" + array["id"] + " data-user=\""
+
+                \+ array["user"] + "\">" + "删除</button>" + "</div><div class=\"right\">操作:"
+
+                \+ "<button class=\"btn-b\" " + "data-id=" + array["id"] + " data-user=\"" + array["user"] + "\">"
+
+                \+ "修改</button>" + "</div></div>";
+```
+
+#### 以下为js全部代码
 
 ```javascript
 var TurnToLogin = () => {
@@ -492,7 +544,36 @@ $(function () {
 });
 ```
 
+---------------------------
 
+
+
+
+
+#### PHP中使用htmlspecialchars防御xss攻击
+
+```php
+$txt = htmlspecialchars(trim($_POST['txt']));
+```
+
+
+
+#### 同时使用mysqli_prepare等语句防御sql注入
+
+```php
+$stmt= mysqli_prepare($link,"INSERT INTO comments(user,comment,addtime)VALUES(?,?,?)");
+    mysqli_stmt_bind_param($stmt, "sss", $user, $txt, $time);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+```
+
+
+
+
+
+
+
+-------------------------------
 
 ### 图片
 
@@ -501,9 +582,13 @@ Images：
 ![](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1543304259605&di=22ace36240af38868342e8c5bef81ed4&imgtype=0&src=http%3A%2F%2Fimgs.aixifan.com%2Fo_1c8uc9u9l1n56ap1vk5m69vji2v.jpg)
 
 > 图为登陆注册界面背景（一拳超人s级英雄大合照）
+>
+>
 
 ![](https://raw.githubusercontent.com/MouseHappy123/BBT/master/liuyanban/53c388616b576.gif)
 
+>
+>
 > 图为留言板界面背景
 
 --------------
