@@ -1,4 +1,4 @@
-#form_login_div{
+﻿#form_login_div{
 	display: block;
 }
 
@@ -152,7 +152,7 @@
 	display: none;
 }
 body{
-	background: url(../liuyanban/53c388616b576.gif) no-repeat center 0px;
+	background: url(../53c388616b576.gif) no-repeat center 0px;
 background-position: center 0;
 background-size: cover;
 }

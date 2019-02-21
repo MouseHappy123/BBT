@@ -5,6 +5,7 @@ session_start();
 //$result=mysqli_query($link,$sql);
 //$colum= mysqli_fetch_array($result);
 $txt = htmlspecialchars(trim($_POST['txt']));
+$txt=str_replace("\n","<br/>",$txt); 
 if(empty($txt)){
     $data = array("code"=>356,"message"=>"内容不能为空");
     echo json_encode($data);
