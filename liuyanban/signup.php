@@ -37,15 +37,15 @@ mysqli_stmt_bind_param($stmt1, "s", $user);
         );
     echo json_encode($result1);exit;}
     if($password1==$password2){
-$result = array(
+        $stmt3= mysqli_prepare($link,"INSERT INTO check1 (user,password) VALUES(?,?)");
+        mysqli_stmt_bind_param($stmt3, "ss", $user , $password1);
+            mysqli_stmt_execute($stmt3);
+            mysqli_stmt_close($stmt3);
+        $result = array(
     "errcode" =>0,
     "errmsg" => "",
     "data" => "注册成功"
 );
-$stmt3= mysqli_prepare($link,"INSERT INTO check1 (user,password) VALUES(?,?)");
-mysqli_stmt_bind_param($stmt3, "ss", $user, $password1);
-    mysqli_stmt_execute($stmt3);
-    mysqli_stmt_close($stmt3);
 echo json_encode($result);}
 else{
     $result2=array("errcode" => 1,

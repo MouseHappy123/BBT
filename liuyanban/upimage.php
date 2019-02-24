@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
 $icon_tem = "" . $_FILES["form_data"]["name"];
 $icon_arr = array("$icon_tem");
 $icon = implode($icon_arr);
-$result=mysqli_query($link,"SELECT FROM ccs_image WHERE user=$user");
+$result=mysqli_query($link,"SELECT * FROM ccs_image WHERE user='$user'");
 $con=mysqli_affected_rows($link);
 if($con){ 
   mysqli_query($link,"UPDATE ccs_image SET icon='$icon' WHERE user='$user'");
