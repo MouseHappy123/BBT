@@ -7,6 +7,14 @@ if (isset($_POST['submit'])) {
     $form_data_type = $_FILES['form_data']['type'];
     $form_data = $_FILES['form_data']['tmp_name'];
     $user=$_SESSION["user"];
+    if(($_FILES["form_data"]["type"]=="image/png"||$_FILES["form_data"]["type"]=="image/jpeg")&&$_FILES["form_data"]["size"]<1024000)
+    {$filename="/var/www/html/" . $_FILES["form_data"]["name"];
+      if(file_exists($filename))
+      {
+          echo"该文件已存在";
+      }
+      else
+      {  
     move_uploaded_file($_FILES["form_data"]["tmp_name"],
     "/var/www/html/" . $_FILES["form_data"]["name"]);
 
@@ -19,7 +27,12 @@ if($con){
   mysqli_query($link,"UPDATE ccs_image SET icon='$icon' WHERE user='$user'");
 echo "头像已更新";}
 else { mysqli_query($link,"INSERT INTO ccs_image (icon,user) VALUES ('$icon','$user')");
-echo "头像已上传";}
+echo "头像已上传";}}
+}
+else
+{
+    echo"文件类型不对";
+}
 }
   //  $data = addslashes(fread(fopen($form_data, "r"), filesize($form_data)));
     //echo "mysqlPicture=".$data;
