@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 header('Content-Type:application/json');
 $connect=mysqli_connect('','','','');
 $result=mysqli_query($connect,"SELECT * FROM signup");
