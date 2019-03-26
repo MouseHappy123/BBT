@@ -1,6 +1,6 @@
 <?php
 header('Content-Type:application/json');
-$connect=mysqli_connect('localhost','root','123Linux','123');
+$connect=mysqli_connect('','','','');
 if(!$connect){
     die("无法连接上数据库，请联系管理员");
 }
