@@ -1,13 +1,13 @@
-<?php
+﻿<?php
 header('Content-Type:application/json');
 date_default_timezone_set('PRC');
 $nowTime=date("Y-m-d-h-i-sa");
 $closeTime = '2020-09-21 00:00:00';
 $startTime = '2019-03-01 00:00:00';
-$addr = 'localhost';			//Database Address
-$dbname = '123';		//Database Name
-$user = 'root';					//Username of Project Database
-$password = '123Linux';		//Password of Project Database
+$addr = '';			//Database Address
+$dbname = '';		//Database Name
+$user = '';					//Username of Project Database
+$password = '';		//Password of Project Database
 function judge_time($errcode,$msg,$nowTime,$time_check){
     $time_check_info=[
         'errcode'=>"$errcode",
