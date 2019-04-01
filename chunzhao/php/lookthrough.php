@@ -1,6 +1,6 @@
-﻿<?php
+<?php
 header('Content-Type:application/json');
-$connect=mysqli_connect('','','','');
+$connect=mysqli_connect('localhost','root','123Linux','123');
 $result=mysqli_query($connect,"SELECT * FROM signup");
 $result_array=array();
 while($value=mysqli_fetch_object($result)){
