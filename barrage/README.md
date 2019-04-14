@@ -2,3 +2,6 @@
 
 <h4>注：前端和后端都写了一个服务端，需要在服务器运行该文件才能发弹幕。
 
+nodejs-websocket服务器文件：server.js
+swoole-websocket服务器文件：example.php
+
