@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>barrage</title>
-    <link rel="stylesheet" type="text/css" href="./bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="./index.css" />
-    <script src="./js/jquery.js"></script>
-    <script src="./js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./bootstrap.min.css"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </head>
 
 <body class="barrage">
@@ -18,33 +18,43 @@
             src="http://vodkgeyttp8.vod.126.net/cloudmusic/7ee3/mv/a104/181251ac9d84d0f40c5fa2d8fc263e7e.mp4?wsSecret=002f44c3adb92a5bf6430859fb524b75&wsTime=1554720592">
         </video>
     </div>
-
-    <div class="btn-group" role="group">
-        <button type="button" class="btn btn-default" id="white">white</button>
-        <button type="button" class="btn btn-danger" id="red">red</button>
-        <button type="button" class="btn btn-primary" id="blue">blue</button>
-        <button type="button" class="btn btn-warning" id="yellow">yellow</button>
-        <button type="button" class="btn btn-success" id="green">green</button>
-        <button type="button" class="btn btn-default" id="purple"
-            style="background-color: purple;color:white;border-color: purple;">purple</button>
-    </div>
-    <div class="btn-group" role="group">
-        <button type="button" class="btn btn-default" disabled="disabled">字体大小</button>
-        <button type="button" class="btn btn-default" id="sm">10px</button>
-        <button type="button" class="btn btn-default" id="s">15px</button>
-        <button type="button" class="btn btn-default" id="m">20px</button>
-        <button type="button" class="btn btn-default" id="l">25px</button>
+    <button class="sends btn active"><img id="one"src="barrage1.png"style="width:20px;">发送弹幕</button>
+    <button class="comments btn"><img id="two"src="comment1.png"style="width:20px;"/>查看评论</button>
+    <div class="sendbarrage">
+    <div class="btn-group" role="group"style="width: 100%;">
+        <button type="button" class="btn btn-default color" id="white">&nbsp;&nbsp;</button>
+        <button type="button" class="btn btn-danger color" id="red">&nbsp;&nbsp;</button>
+        <button type="button" class="btn btn-primary color" id="blue">&nbsp;&nbsp;</button>
+        <button type="button" class="btn btn-warning color" id="yellow">&nbsp;&nbsp;</button>
+        <button type="button" class="btn btn-success color" id="green">&nbsp;&nbsp;</button>
+        <button type="button" class="btn btn-default color" id="purple"
+            style="background-color: purple;color:white;border-color: purple;">&nbsp;&nbsp;</button>
     </div>
     <div class="form-group">
-        <input type="text" id="value" class="form-control" name="send" placeholder="请输入弹幕" />
-
-        <div class="btn-group" role="group">
-            <button class="btn btn-default" id="send">发送</button>
-            <button class="btn btn-default clear">清空</button>
+        <input type="text" id="value" class="form-control" name="send" placeholder="请输入弹幕" style="width:70%;margin:0 auto;"/>
+        <button class="middle btn active"style="margin-top:20px;"><img id="middle"src="middle1.png"style="width:20px;">中部</button>
+        <button class="up btn"style="margin-top:20px;"><img id="up"src="up1.png"style="width:20px;">置顶</button>
+        <button class="down btn"style="margin-top:20px;"><img id="down"src="down1.png"style="width:20px;">置底</button>
+        <div class="btn-group" role="group"style="width: 100%;">
+            <button type="button" class="btn choose" disabled="disabled">字体大小</button>
+            <button type="button" class="btn sm">10px</button>
+            <button type="button" class="btn s">15px</button>
+            <button type="button" class="btn m">20px</button>
+            <button type="button" class="btn l">25px</button>
         </div>
+            <button class="btn active choose1" id="send"style="margin-right:2.5%;margin-left:2.5%;">发送弹幕</button>
+            <button class="btn active choose1 clear"style="margin-right:2.5%;margin-left:2.5%;">清空弹幕</button>
     </div>
-    <div style="width:100%;margin:0 auto;">
-        <textarea readonly="readonly"></textarea>
+    </div>
+    <div class="comment">
+        <div class="textarea">
+            <div id="comment">
+                <img src="./general.jpg"style="width:50px;float:left;margin:5%;"/>
+                <div class="append">用户名：root</div>
+                <div class="append">评论：我错了，现在改！</div>
+                <div class="append">时间：0000</div>
+            </div>
+        </div>
     </div>
     <script src="js/jquery.js"></script>
     <script src="app_sw.js"></script>

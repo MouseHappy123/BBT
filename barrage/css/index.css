@@ -16,9 +16,10 @@ body.barrage{
     background-repeat: no-repeat;
       background-position: center;
     z-index: 1;
+    height: 100%;
 }
 #bac{
-    background-color:rgba(45, 45, 45, 0.8);
+    background-color:rgba(45,45.45, 0.8);
     width: 80%;
     position: relative;
     left: 12%;
@@ -54,7 +55,7 @@ img.input{
 input.index{
     font-size: 20px;
     background:rgba(45, 45, 45, 0.8);
-    margin-left: 10px;
+    margin-left: 5px;
     border: 0;
     margin-bottom: 20px;
     color: #717171;
@@ -72,23 +73,69 @@ input.index{
     justify-content: center;
     margin-top:20px;
     margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .form-group{
     margin: 0 auto;
-    width:70%;
 }
 video{
     width:100%;
     height:200px;
 }
-textarea{
+.textarea{
     width: 90%;
-    height:300px;
+    height:350px;
     border: 1em #717171;
     line-height: 20px;
     word-wrap:break-word; 
     margin:5%;
     padding: 10px;
+}
+#comment{
+    border-bottom:3px solid #413e9a;
+    font-size: 10px;
+    margin:1%;
+}
+.comment{
+    visibility: hidden;
+    width:100%;margin:0 auto;
+    position: absolute;
+    top:40%;
+    background:rgba(21, 21, 30, 1)
+}
+.append{
+    margin:2%;
+    color: white;
+}
+.sends{
+    width:50%;height:50px;float:left;background-color:rgba(45, 45, 45, 0.5);color:rgb(69,66,164);
+}
+.comments{
+    width:50%;height:50px;background-color:rgba(45, 45, 45, 0.5);color:rgb(69,66,164);
+}
+.choose1{
+    width:45%;height:50px;float:left;background-color:rgba(45, 45, 45, 0.5);color:rgb(69,66,164);
+}
+.active{
+    color:white !important;
+    background-color: #413e9a !important;
+    opacity: 1 !important;
+}
+.active1{
+    border:2px solid #413e9a !important;
+}
+.up,.down,.middle{
+    width:33%;height:50px;float:left;background-color:rgba(45, 45, 45, 0.5);color:rgb(69,66,164);
+}
+.sm,.s,.m,.l{
+    width:16%;float:left;background-color:rgba(45, 45, 45, 0.5);color:rgb(69,66,164);
+}
+.choose{
+    width:30%;float:left;background-color:rgba(45, 45, 45, 0.5);color:rgb(69,66,164);
+}
+.color{
+    margin-left: 6% !important;
 }
 
 

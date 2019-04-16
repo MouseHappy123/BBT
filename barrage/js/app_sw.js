@@ -13,6 +13,8 @@ function getCookie(name) {
 var name = getCookie("name");
 var clear = document.getElementsByClassName("clear")[0];
 var value = document.getElementById("value");
+var time= new Date();
+time=time.toLocaleString();
 clear.disabled = true;
 if (window.WebSocket) {
     var ws = new WebSocket('ws://182.254.161.213:3389');
@@ -24,8 +26,7 @@ if (window.WebSocket) {
         }
         else {
             if (value.value) {
-                ws.send(name + "：" + value.value);
-
+                ws.send(name+";"+value.value);
                 value.value = "";
             }
             else {
@@ -43,13 +44,19 @@ if (window.WebSocket) {
     }
     ws.onopen = function (e) {
         console.log("连接服务器成功");
-        ws.send("欢迎" + name + "进入弹幕测试网页！")
+        //ws.send("欢迎" + name + "进入弹幕测试网页！")
             ;
     }
     ws.onmessage = function (e) {
-        var jqueryDom = createBarrage(e.data);
+        var result=e.data.indexOf(";");
+        console.log(result);
+        var strlen=e.data.length;
+        var string1=e.data.substring(0,result);
+        var string2=e.data.substring(result+1,strlen);
+        var jqueryDom = createBarrage(string2);
         addInterval(jqueryDom);
-        $('textarea').append(e.data + "\r\n");
+        $('.textarea').append("<div id=\"comment\">"+"<img src=\"./general.jpg\"style=\"width:50px;float:left;margin:5%;\"/><div class=\"append\">用户名："+string1+"</div>"+"<div class=\"append\">评论："+string2+"</div>"+
+        "<div class=\"append\">时间："+time+"</div></div>");
     }
     ws.onclose = function (e) {
         console.log("服务器关闭");
