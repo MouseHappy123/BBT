@@ -1,7 +1,7 @@
 var isShow = true;
 var fontcolor = "white";
 var fontSize = Math.floor(Math.random() * 24) + "px";
-var up="70px";
+var up = "70px";
 $("#white").click(function () {
     fontcolor = "white";
     $("#white").addClass("active1");
@@ -101,7 +101,7 @@ $(".comments").click(function () {
     $("#one").replaceWith("<img id=\"one\"src=\"./barrage1.png\"style=\"width:20px;\"/>");
 });
 $(".middle").click(function () {
-    up="70px";
+    up = "70px";
     $(".middle").addClass("active");
     $(".up").removeClass("active");
     $(".down").removeClass("active");
@@ -110,7 +110,7 @@ $(".middle").click(function () {
     $("#down").replaceWith("<img id=\"down\"src=\"./down1.png\"style=\"width:20px;\"/>");
 });
 $(".up").click(function () {
-    up="10px";
+    up = "10px";
     $(".up").addClass("active");
     $(".middle").removeClass("active");
     $(".down").removeClass("active");
@@ -119,7 +119,7 @@ $(".up").click(function () {
     $("#down").replaceWith("<img id=\"down\"src=\"./down1.png\"style=\"width:20px;\"/>");
 });
 $(".down").click(function () {
-    up="130px";
+    up = "130px";
     $(".down").addClass("active");
     $(".up").removeClass("active");
     $(".middle").removeClass("active");
